@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingRight="@dimen/paddingRightLong"
+    android:paddingBottom="12dp">
+
+    <ImageView
+        android:id="@+id/iv_course_online_thumbnail"
+        android:layout_width="120dp"
+        android:layout_height="65dp"
+        android:background="@drawable/course_online"/>
+
+    <RelativeLayout
+        android:layout_toRightOf="@id/iv_course_online_thumbnail"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_online_course_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="在线课程标题"
+            android:textSize="15sp"
+            android:textColor="@color/colorTitle"
+            android:maxLines="2"/>
+
+        <com.mengft.mengft_ui.Compenent.TextViewNumber
+            android:id="@+id/tv_online_course_hot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="人气"
+            android:textSize="10sp"
+            android:textColor="@color/colorArticleHot"/>
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

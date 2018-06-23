@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.mengft.mengft_ui.MainActivity">
+
+    <RadioGroup
+        android:id="@+id/rg_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/tab_menu_item"
+            android:text="@string/tab_menu_home" />
+
+        <RadioButton
+            android:id="@+id/rb_course"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/tab_menu_item"
+            android:text="@string/tab_menu_course" />
+
+        <RadioButton
+            android:id="@+id/rb_community"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            style="@style/tab_menu_item"
+            android:text="@string/tab_menu_community" />
+
+        <RadioButton
+            android:id="@+id/rb_personalCenter"
+            style="@style/tab_menu_item"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/tab_menu_personalCenter" />
+
+    </RadioGroup>
+
+    <com.mengft.mengft_ui.Compenent.ViewPagerNoScroll
+        android:id="@+id/vpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rg_tab_bar"
+        android:background="@drawable/tabbar_border" />
+
+</RelativeLayout>

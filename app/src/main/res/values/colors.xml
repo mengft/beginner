@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBorder">#eceff4</color>
+    <color name="colorPrimary">#298eff</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorYellow">#ffd940</color>
+    <color name="colorGray">#54657e</color>
+    <color name="colorHeader">#3c4d66</color>
+    <color name="colorTitle">#3f4e66</color>
+    <color name="colorLightTitle">#54657e</color>
+    <color name="colorText">#aab9ca</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="colorCardLeft">#ff7575</color>
+    <color name="colorCardRight">#ffcc66</color>
+    <!--首页图标View背景色-->
+    <color name="colorHomeIconLeft">#8151ff</color>
+    <color name="colorHomeIconCenter">#ff6395</color>
+    <color name="colorHomeIconRight">#f89336</color>
+    <!--推荐资讯-->
+    <color name="colorArticleTitle">#3f4e66</color>
+    <color name="colorArticleHot">#aab9ca</color>
+</resources>

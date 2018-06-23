@@ -1,0 +1,338 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.mengft.mengft_ui.Compenent.TopBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:title="@string/tab_menu_home" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/home_banner" />
+
+            <!--分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/colorBorder" />
+
+            <!--血糖、血压信息-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:paddingLeft="@dimen/paddingLeftLong"
+                android:paddingRight="@dimen/paddingLeftLong">
+
+                <RelativeLayout
+                    android:id="@+id/rl_data_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_gravity="left"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_card_left">
+
+                    <TextView
+                        android:id="@+id/tv_card_pressure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="血压"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp" />
+
+                    <com.mengft.mengft_ui.Compenent.TextViewNumber
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_card_pressure"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="122/83"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="28dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="8dp"
+                        android:text="血压日记"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/card_pressure"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_data_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/home_card_right">
+
+                    <TextView
+                        android:id="@+id/tv_card_weight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="体重"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="14sp" />
+
+                    <com.mengft.mengft_ui.Compenent.TextViewNumber
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_card_weight"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="70kg"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="28dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="8dp"
+                        android:text="体重日记"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="12sp" />
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentBottom="true"
+                        android:background="@drawable/card_weight"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/colorBorder" />
+
+            <!--我的项目-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Header-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingRight="@dimen/paddingRightLong"
+                    android:paddingBottom="16dp"
+                    android:layout_marginLeft="@dimen/paddingLeftLong"
+                    android:background="@drawable/topbar_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="我的项目"
+                        android:textColor="@color/colorTitle" />
+
+                    <TextView
+                        android:id="@+id/tv_home_operating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/operating"
+                        android:textColor="@color/colorGray" />
+
+                </RelativeLayout>
+
+                <!--项目信息-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="19dp"
+                    android:paddingRight="37dp"
+                    android:paddingBottom="22dp"
+                    android:paddingLeft="37dp">
+
+                    <!--调查问卷-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_home_icon_left"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/home_icon_left">
+
+                            <TextView
+                                android:id="@+id/tv_home_project1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/question"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="14sp"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_below="@id/rl_home_icon_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="调查问卷"/>
+
+                    </RelativeLayout>
+
+                    <!--体检报告-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_home_icon_center"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/home_icon_center">
+
+                            <TextView
+                                android:id="@+id/tv_home_project2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/report"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="14sp"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_below="@id/rl_home_icon_center"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="体检报告"/>
+
+                    </RelativeLayout>
+
+                    <!--膳食评估-->
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+                        <RelativeLayout
+                            android:id="@+id/rl_home_icon_right"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/home_icon_right">
+
+                            <TextView
+                                android:id="@+id/tv_home_project3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/evaluate"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="10sp"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_below="@id/rl_home_icon_right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="膳食评估"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/colorBorder" />
+
+            <!--推荐阅读-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Header-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingRight="@dimen/paddingRightLong"
+                    android:paddingBottom="16dp"
+                    android:layout_marginLeft="@dimen/paddingLeftLong"
+                    android:background="@drawable/topbar_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="推荐阅读"
+                        android:textColor="@color/colorTitle" />
+
+                </RelativeLayout>
+
+                <!--Article List-->
+                <com.mengft.mengft_ui.Compenent.ListViewForScrollView
+                    android:id="@+id/lv_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/paddingLeftLong"
+                    style="@style/listview"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+</ScrollView>
+
+

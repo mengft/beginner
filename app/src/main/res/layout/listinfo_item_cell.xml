@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/paddingLeftShort"
+    android:paddingTop="10dp"
+    android:paddingRight="@dimen/paddingLight"
+    android:paddingBottom="10dp"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_listinfo_key"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="Key"
+        android:textSize="@dimen/font15"
+        android:textColor="@color/colorLightTitle"/>
+
+    <com.mengft.mengft_ui.Compenent.TextViewIcon
+        android:id="@+id/tvi_listinfo_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="@string/more"
+        android:textSize="@dimen/font10"
+        android:textColor="@color/colorText"/>
+
+    <TextView
+        android:id="@+id/tv_listinfo_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dp"
+        android:layout_toLeftOf="@id/tvi_listinfo_icon"
+        android:text=""
+        android:textSize="@dimen/font15"
+        android:textColor="@color/colorLightTitle"/>
+
+</RelativeLayout>

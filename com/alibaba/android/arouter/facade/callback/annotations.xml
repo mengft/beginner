@@ -1,0 +1,5 @@
+<root>
+    <item name='com.alibaba.android.arouter.facade.callback.NavigationCallback'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

@@ -1,0 +1,124 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.mengft.mengft_ui.Compenent.TopBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:title="@string/tab_menu_community" />
+
+            <!--我的项目-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Header-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingRight="@dimen/paddingRightLong"
+                    android:paddingBottom="16dp"
+                    android:layout_marginLeft="@dimen/paddingLeftLong"
+                    android:background="@drawable/topbar_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="我的项目"
+                        android:textColor="@color/colorTitle" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingRight="@dimen/paddingRightLong"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="@dimen/paddingLeftLong">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:background="@drawable/diabete_icon"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="65dp"
+                        android:background="@drawable/modal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:text="糖尿病项目"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20dp"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--分割线-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="12dp"
+                android:background="@color/colorBorder" />
+
+            <!--我的消息-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--Header-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="15dp"
+                    android:paddingRight="@dimen/paddingRightLong"
+                    android:paddingBottom="16dp"
+                    android:layout_marginLeft="@dimen/paddingLeftLong"
+                    android:background="@drawable/topbar_border">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="我的消息"
+                        android:textColor="@color/colorTitle" />
+
+                </RelativeLayout>
+
+                <!--Message List-->
+                <com.mengft.mengft_ui.Compenent.ListViewForScrollView
+                    android:id="@+id/lv_community_messagelist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/paddingLeftLong"
+                    style="@style/listview"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>
+
+

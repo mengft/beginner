@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mengft.mengft_ui.Compenent.TopBar
+        android:id="@+id/tb_course_player"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:leftText="@string/back1"
+        app:title="在线课程" />
+
+    <RelativeLayout
+        android:id="@+id/rl_course_player_parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/playerHeight"
+        android:background="#000000">
+
+        <com.easefun.polyvsdk.video.PolyvVideoView
+            android:id="@+id/polyv_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--左右手势-->
+        <com.mengft.mengft_ui.Course.player.PolyvPlayerProgressView
+            android:id="@+id/pv_course_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <!--控制器-->
+        <com.mengft.mengft_ui.Course.player.PolyvPlayerMediaController
+            android:id="@+id/course_player_controller"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+        <!-- 视频在加载过程中显示的进度条 -->
+        <com.mengft.mengft_ui.Compenent.CircleLoading
+            android:id="@+id/cl_course_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <!--缩略图-->
+        <com.mengft.mengft_ui.Course.player.PolyvPlayerPreviewView
+            android:id="@+id/preview_course_player"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+</LinearLayout>

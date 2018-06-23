@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.mengft.mengft_ui.Compenent.TopBar
+        android:id="@+id/topbar"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:background="@drawable/topbar_border"
+        app:title="个人资料"
+        app:leftText="@string/back1"/>
+
+    <ExpandableListView
+        android:id="@+id/el_personal_userinfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:groupIndicator="@color/transparent"
+        android:childDivider="@color/colorBorder" />
+
+</LinearLayout>

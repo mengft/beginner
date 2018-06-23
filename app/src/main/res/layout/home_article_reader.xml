@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.mengft.mengft_ui.Compenent.TopBar
+        android:id="@+id/tb_article_reader"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:leftText="@string/back1"
+        app:title="正在加载" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <WebView
+            android:id="@+id/wv_article_reader"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.mengft.mengft_ui.Compenent.CircleLoading
+            android:id="@+id/cl_article_reader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
