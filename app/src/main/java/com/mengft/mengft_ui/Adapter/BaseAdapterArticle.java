@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.mengft.mengft_ui.Compenent.TextViewNumber;
 import com.mengft.mengft_ui.R;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 /**
  * Created by mengft on 2018/5/22.
@@ -83,7 +84,8 @@ public class BaseAdapterArticle extends BaseAdapter {
         String hot = context.getResources().getString(R.string.hot);
         viewHolder.tv_article_hot.setText(String.format(hot, item.getEnrollNumber()));
         // 缩略图
-        //viewHolder.iv_article_thumbnail.setImageURI(Uri.parse(item.getThumbnail()));
+        viewHolder.iv_article_thumbnail.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        ImageLoader.getInstance().displayImage(item.getThumbnail(), viewHolder.iv_article_thumbnail);
 
         return view;
     }

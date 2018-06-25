@@ -10,8 +10,7 @@
     <ImageView
         android:id="@+id/iv_article_thumbnail"
         android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:background="@drawable/home_banner"/>
+        android:layout_height="65dp"/>
 
     <RelativeLayout
         android:layout_toRightOf="@id/iv_article_thumbnail"

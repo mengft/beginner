@@ -1,10 +1,10 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <ScrollView
+        android:id="@+id/sv_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -81,9 +81,9 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentBottom="true"
-                        android:background="@drawable/card_pressure"/>
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/card_pressure" />
 
                 </RelativeLayout>
 
@@ -129,9 +129,9 @@
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:layout_alignParentLeft="true"
                         android:layout_alignParentBottom="true"
-                        android:background="@drawable/card_weight"/>
+                        android:layout_alignParentLeft="true"
+                        android:background="@drawable/card_weight" />
 
                 </RelativeLayout>
 
@@ -153,11 +153,11 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="15dp"
-                    android:paddingRight="@dimen/paddingRightLong"
-                    android:paddingBottom="16dp"
                     android:layout_marginLeft="@dimen/paddingLeftLong"
-                    android:background="@drawable/topbar_border">
+                    android:background="@drawable/topbar_border"
+                    android:paddingBottom="16dp"
+                    android:paddingRight="@dimen/paddingRightLong"
+                    android:paddingTop="15dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -180,10 +180,10 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="19dp"
-                    android:paddingRight="37dp"
                     android:paddingBottom="22dp"
-                    android:paddingLeft="37dp">
+                    android:paddingLeft="37dp"
+                    android:paddingRight="37dp"
+                    android:paddingTop="19dp">
 
                     <!--调查问卷-->
                     <RelativeLayout
@@ -206,16 +206,16 @@
                                 android:layout_centerInParent="true"
                                 android:text="@string/question"
                                 android:textColor="@color/colorWhite"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
                         <TextView
-                            android:layout_below="@id/rl_home_icon_left"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/rl_home_icon_left"
                             android:layout_marginTop="8dp"
-                            android:text="调查问卷"/>
+                            android:text="调查问卷" />
 
                     </RelativeLayout>
 
@@ -239,16 +239,16 @@
                                 android:layout_centerInParent="true"
                                 android:text="@string/report"
                                 android:textColor="@color/colorWhite"
-                                android:textSize="14sp"/>
+                                android:textSize="14sp" />
 
                         </RelativeLayout>
 
                         <TextView
-                            android:layout_below="@id/rl_home_icon_center"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/rl_home_icon_center"
                             android:layout_marginTop="8dp"
-                            android:text="体检报告"/>
+                            android:text="体检报告" />
 
                     </RelativeLayout>
 
@@ -272,16 +272,16 @@
                                 android:layout_centerInParent="true"
                                 android:text="@string/evaluate"
                                 android:textColor="@color/colorWhite"
-                                android:textSize="10sp"/>
+                                android:textSize="10sp" />
 
                         </RelativeLayout>
 
                         <TextView
-                            android:layout_below="@id/rl_home_icon_right"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_below="@id/rl_home_icon_right"
                             android:layout_marginTop="8dp"
-                            android:text="膳食评估"/>
+                            android:text="膳食评估" />
 
                     </RelativeLayout>
 
@@ -305,11 +305,11 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="15dp"
-                    android:paddingRight="@dimen/paddingRightLong"
-                    android:paddingBottom="16dp"
                     android:layout_marginLeft="@dimen/paddingLeftLong"
-                    android:background="@drawable/topbar_border">
+                    android:background="@drawable/topbar_border"
+                    android:paddingBottom="16dp"
+                    android:paddingRight="@dimen/paddingRightLong"
+                    android:paddingTop="15dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -323,16 +323,17 @@
                 <!--Article List-->
                 <com.mengft.mengft_ui.Compenent.ListViewForScrollView
                     android:id="@+id/lv_home"
+                    style="@style/listview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/paddingLeftLong"
-                    style="@style/listview"/>
+                    android:layout_marginLeft="@dimen/paddingLeftLong" />
 
             </LinearLayout>
 
         </LinearLayout>
 
-    </FrameLayout>
-</ScrollView>
+    </ScrollView>
+
+</FrameLayout>
 
 

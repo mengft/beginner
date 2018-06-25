@@ -1,16 +1,20 @@
 package com.mengft.mengft_ui.Adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mengft.mengft_ui.Compenent.TextViewNumber;
 import com.mengft.mengft_ui.R;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
 import static com.mengft.mengft_ui.R.id.tv_online_course_title;
 
@@ -58,9 +62,8 @@ public class BaseAdapterCourseOnline extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
 
         ViewHolder viewHolder = null;
-
         if (view == null) {
-            view = (LinearLayout) LayoutInflater.from(getContext()).inflate(R.layout.course_online_cell, null);
+            view = LayoutInflater.from(getContext()).inflate(R.layout.course_online_cell, null);
             viewHolder = new ViewHolder();
             viewHolder.tv_online_course_title = view.findViewById(tv_online_course_title);
             viewHolder.tv_online_course_hot = view.findViewById(R.id.tv_online_course_hot);
@@ -73,16 +76,26 @@ public class BaseAdapterCourseOnline extends BaseAdapter {
 
         // 数据源
         item = (BaseAdapterCourseOnlineCellData) getItem(i);
-
         // 标题
         viewHolder.tv_online_course_title.setText(item.getTitle());
-
         // 报名人数
         String enrollNumber = getContext().getResources().getString(R.string.enrollNumber);
         viewHolder.tv_online_course_hot.setText(String.format(enrollNumber, item.getEnrollNumber()));
-
         // 封面
-        //viewHolder.iv_course_online_thumbnail.setImageURI(Uri.parse(item.getThumbnail()));
+        viewHolder.iv_course_online_thumbnail.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+        DisplayImageOptions options = new DisplayImageOptions.Builder()
+                .showImageOnLoading(R.drawable.course_online_loading)           // 设置图片在下载期间显示的图片
+                .showImageForEmptyUri(R.drawable.course_online_loading)         // 设置图片Uri为空或是错误的时候显示的图片
+                .showImageOnFail(R.drawable.course_online_loading)              // 设置图片加载/解码过程中错误时候显示的图片
+                .bitmapConfig(Bitmap.Config.RGB_565)                            // 设置图片的解码类型
+                .cacheInMemory(false)                                           // 设置下载的图片是否缓存在内存中
+                .cacheOnDisk(false)                                             // 设置下载的图片是否缓存在SD卡中
+                .displayer(new FadeInBitmapDisplayer(100))                      // 是否图片加载好后渐入的动画时间
+                .imageScaleType(ImageScaleType.IN_SAMPLE_INT)                   // 图片布局方式
+                .build();                                                       // 构建完成
+
+        ImageLoader.getInstance().displayImage(item.getThumbnail(), viewHolder.iv_course_online_thumbnail, options);
 
         return view;
     }
@@ -92,4 +105,5 @@ public class BaseAdapterCourseOnline extends BaseAdapter {
         TextViewNumber tv_online_course_hot;
         ImageView iv_course_online_thumbnail;
     }
+
 }

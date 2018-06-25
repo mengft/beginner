@@ -305,8 +305,8 @@ public class PolyvPlayerMediaController extends PolyvBaseMediaController impleme
      */
     public void changeScape () {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            ScreenUtils.reSetStatusBar(videoActivity);
             ScreenUtils.setPortrait(videoActivity);
+            ScreenUtils.reSetStatusBar(videoActivity);
             initPortraitWH();
         } else {
             ScreenUtils.setLandscape(videoActivity);
