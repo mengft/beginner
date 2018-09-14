@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.mengft.mengft_ui.Compenent.TopBar
+    <com.mengft.mengft_ui.Component.TopBar
         android:id="@+id/tb_course_player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
             android:visibility="gone" />
 
         <!-- 视频在加载过程中显示的进度条 -->
-        <com.mengft.mengft_ui.Compenent.CircleLoading
+        <com.mengft.mengft_ui.Component.CircleLoading
             android:id="@+id/cl_course_player"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

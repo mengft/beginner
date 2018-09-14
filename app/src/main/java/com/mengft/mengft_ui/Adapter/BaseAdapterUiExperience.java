@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.mengft.mengft_ui.Compenent.TextViewIcon;
+import com.mengft.mengft_ui.Component.TextViewIcon;
 import com.mengft.mengft_ui.R;
 
 /**

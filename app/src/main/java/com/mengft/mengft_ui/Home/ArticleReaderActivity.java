@@ -15,8 +15,8 @@ import android.webkit.WebViewClient;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.mengft.mengft_ui.Compenent.CircleLoading;
-import com.mengft.mengft_ui.Compenent.TopBar;
+import com.mengft.mengft_ui.Component.CircleLoading;
+import com.mengft.mengft_ui.Component.TopBar;
 import com.mengft.mengft_ui.R;
 
 /**

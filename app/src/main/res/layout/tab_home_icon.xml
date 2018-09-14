@@ -3,7 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <com.mengft.mengft_ui.Compenent.TextViewIcon
+    <com.mengft.mengft_ui.Component.TextViewIcon
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/advice"/>

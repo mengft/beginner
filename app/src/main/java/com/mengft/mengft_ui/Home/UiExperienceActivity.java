@@ -9,9 +9,10 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.mengft.mengft_ui.Adapter.BaseAdapterUiExperience;
-import com.mengft.mengft_ui.Compenent.AlertDialogMessage;
-import com.mengft.mengft_ui.Compenent.TopBar;
+import com.mengft.mengft_ui.Component.AlertDialogMessage;
+import com.mengft.mengft_ui.Component.TopBar;
 import com.mengft.mengft_ui.R;
 
 import static com.mengft.mengft_ui.R.id.lv_uiexperience;
@@ -23,7 +24,7 @@ import static com.mengft.mengft_ui.R.id.lv_uiexperience;
 @Route(path = "/home/UiExperienceActivity")
 public class UiExperienceActivity extends Activity implements AdapterView.OnItemClickListener, AlertDialogMessage.AlertDialogMessageListener {
 
-    private static String TAG = "UiExperienceActivity";
+    private static String TAG = UiExperienceActivity.class.getSimpleName();
     private AlertDialogMessage alertDialogMessage;
     private ListView listView;
     private String[] ui_arr;
@@ -33,7 +34,7 @@ public class UiExperienceActivity extends Activity implements AdapterView.OnItem
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ui_experience);
+        setContentView(R.layout.home_ui_experience);
 
         bindTopBar();
         bindListView();
@@ -62,7 +63,7 @@ public class UiExperienceActivity extends Activity implements AdapterView.OnItem
      * 绑定ListView
      */
     private void bindListView() {
-        ui_arr = new String[]{"AlertDialigMessage", "AlertDaaligMessage", "TextViewNumber", "TextViewIcon"};
+        ui_arr = new String[]{"AlertDialigMessage", "AlertDaaligMessage", "TextViewNumber", "TextViewIcon", "CameraCustomize"};
         listView = findViewById(lv_uiexperience);
         listView.setAdapter(new BaseAdapterUiExperience(this, ui_arr));
         listView.setOnItemClickListener(this);
@@ -78,7 +79,8 @@ public class UiExperienceActivity extends Activity implements AdapterView.OnItem
                 alertDialogMessage.setAlertListener(this);
                 alertDialogMessage.show();
                 break;
-            case "AlertDaaligMessage":
+            case "CameraCustomize":
+                ARouter.getInstance().build("/home/CameraCustomize").navigation();
                 break;
             default:
                 break;

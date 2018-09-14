@@ -18,7 +18,7 @@ import com.easefun.polyvsdk.video.IPolyvVideoView;
 import com.easefun.polyvsdk.video.PolyvBaseMediaController;
 import com.easefun.polyvsdk.video.PolyvVideoView;
 import com.easefun.polyvsdk.vo.PolyvVideoVO;
-import com.mengft.mengft_ui.Compenent.TextViewIcon;
+import com.mengft.mengft_ui.Component.TextViewIcon;
 import com.mengft.mengft_ui.R;
 import com.mengft.mengft_ui.Utils.DrawableUtils;
 import com.mengft.mengft_ui.Utils.ScreenUtils;

@@ -9,14 +9,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.mengft.mengft_ui.Compenent.TopBar
+        <com.mengft.mengft_ui.Component.TopBar
             android:id="@+id/tb_ui_experience"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:leftText="@string/back1"
             app:title="UI体验馆" />
 
-        <com.mengft.mengft_ui.Compenent.ListViewForScrollView
+        <com.mengft.mengft_ui.Component.ListViewForScrollView
             android:id="@+id/lv_uiexperience"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"

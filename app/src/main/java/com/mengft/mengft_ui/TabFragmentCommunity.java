@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mengft.mengft_ui.Adapter.BaseAdapterCommunity;
-import com.mengft.mengft_ui.Compenent.ListViewForScrollView;
+import com.mengft.mengft_ui.Component.ListViewForScrollView;
 
 /**
  * Created by mengft on 2018/5/2.

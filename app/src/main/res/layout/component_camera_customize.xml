@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <SurfaceView
+        android:id="@+id/sv_camera_customize"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!--预览-->
+    <RelativeLayout
+        android:id="@+id/rl_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:background="@color/transparent">
+
+        <ImageView
+            android:id="@+id/iv_take_image"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/take_image"/>
+        
+        <ImageView
+            android:id="@+id/iv_take_image_back"
+            android:layout_toLeftOf="@id/iv_take_image"
+            android:layout_width="40dp"
+            android:layout_height="22dp"
+            android:layout_marginRight="50dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/take_image_back"/>
+
+    </RelativeLayout>
+
+    <!--拍照结束-->
+    <RelativeLayout
+        android:id="@+id/rl_resultview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginRight="70dp"
+        android:background="@color/transparent"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/camera_cancle">
+
+            <ImageView
+                android:id="@+id/iv_take_camera_cancle"
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/take_image_cancel" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/camera_confirm">
+
+            <ImageView
+                android:id="@+id/iv_take_camera_confirm"
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/take_image_confirm" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

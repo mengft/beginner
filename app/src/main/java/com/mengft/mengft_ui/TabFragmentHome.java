@@ -16,7 +16,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.mengft.mengft_ui.Adapter.BaseAdapterArticle;
 import com.mengft.mengft_ui.Adapter.BaseAdapterArticleCellDate;
-import com.mengft.mengft_ui.Compenent.ListViewForScrollView;
+import com.mengft.mengft_ui.Component.ListViewForScrollView;
 
 /**
  * Created by mengft on 2018/5/2.
@@ -65,10 +65,12 @@ public class TabFragmentHome extends Fragment implements View.OnClickListener, A
                 new BaseAdapterArticleCellDate("资讯标题二", "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2410009723,4103265257&fm=27&gp=0.jpg", "http://www.runoob.com/w3cnote/android-tutorial-listview-item.html", 20),
                 new BaseAdapterArticleCellDate("资讯标题三", "http://img5.imgtn.bdimg.com/it/u=3452332210,1593316901&fm=27&gp=0.jpg", "http://www.runoob.com/w3cnote/android-tutorial-handler-message.html", 20),
                 new BaseAdapterArticleCellDate("资讯标题四", "https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3062519694,3169991945&fm=27&gp=0.jpg", "http://www.runoob.com/w3cnote/android-tutorial-relativelayout.html", 20),
+                new BaseAdapterArticleCellDate("资讯标题五", "https://111ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3062519694,3169991945&fm=27&gp=0.jpg", "http://www.runoob.com/w3cnote/android-tutorial-relativelayout.html", 20),
         };
         lv_home.setAdapter(new BaseAdapterArticle(getContext(), newsList));
 
         rl_data_left.setOnClickListener(this);
+        rl_data_right.setOnClickListener(this);
         lv_home.setOnItemClickListener(this);
 
         sv_home.scrollTo(0, 0);
@@ -79,6 +81,9 @@ public class TabFragmentHome extends Fragment implements View.OnClickListener, A
         switch (view.getId()) {
             case R.id.rl_data_left:
                 ARouter.getInstance().build("/home/UiExperienceActivity").navigation();
+                break;
+            case R.id.rl_data_right:
+                ARouter.getInstance().build("/home/ApiExperienceActivity").navigation();
                 break;
             default:
                 break;

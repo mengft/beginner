@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.mengft.mengft_ui.Adapter.BaseAdapterPersonalOptionsCellData;
-import com.mengft.mengft_ui.Compenent.TextViewIcon;
+import com.mengft.mengft_ui.Component.TextViewIcon;
 
 /**
  * Created by mengft on 2018/5/2.
