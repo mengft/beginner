@@ -28,7 +28,7 @@
             android:textColor="@color/colorTitle"
             android:textSize="15dp" />
 
-        <com.mengft.mengft_ui.Compenent.TextViewNumber
+        <com.mengft.mengft_ui.Component.TextViewNumber
             android:id="@+id/tv_offline_course_enrollnumber"
             android:layout_width="match_parent"
             android:layout_height="14sp"

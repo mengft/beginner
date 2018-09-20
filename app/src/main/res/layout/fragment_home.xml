@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.mengft.mengft_ui.Compenent.TopBar
+            <com.mengft.mengft_ui.Component.TopBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:title="@string/tab_menu_home" />
@@ -58,7 +58,7 @@
                         android:textColor="@color/colorWhite"
                         android:textSize="14sp" />
 
-                    <com.mengft.mengft_ui.Compenent.TextViewNumber
+                    <com.mengft.mengft_ui.Component.TextViewNumber
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_card_pressure"
@@ -106,7 +106,7 @@
                         android:textColor="@color/colorWhite"
                         android:textSize="14sp" />
 
-                    <com.mengft.mengft_ui.Compenent.TextViewNumber
+                    <com.mengft.mengft_ui.Component.TextViewNumber
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_card_weight"
@@ -321,7 +321,7 @@
                 </RelativeLayout>
 
                 <!--Article List-->
-                <com.mengft.mengft_ui.Compenent.ListViewForScrollView
+                <com.mengft.mengft_ui.Component.ListViewForScrollView
                     android:id="@+id/lv_home"
                     style="@style/listview"
                     android:layout_width="match_parent"

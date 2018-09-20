@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.mengft.mengft_ui.Compenent.TextViewIcon;
+import com.mengft.mengft_ui.Component.TextViewIcon;
 import com.mengft.mengft_ui.R;
 
 /**
@@ -17,9 +17,9 @@ import com.mengft.mengft_ui.R;
 public class BaseAdapterUiExperience extends BaseAdapter {
 
     private Context context;
-    private String[] data;
+    private BaseAdapterComponentCellData[] data;
 
-    public BaseAdapterUiExperience(Context context, String[] data) {
+    public BaseAdapterUiExperience(Context context, BaseAdapterComponentCellData[] data) {
         this.context = context;
         this.data = data;
     }
@@ -32,11 +32,11 @@ public class BaseAdapterUiExperience extends BaseAdapter {
         this.context = context;
     }
 
-    public String[] getData() {
+    public BaseAdapterComponentCellData[] getData() {
         return data;
     }
 
-    public void setData(String[] data) {
+    public void setData(BaseAdapterComponentCellData[] data) {
         this.data = data;
     }
 
@@ -57,7 +57,7 @@ public class BaseAdapterUiExperience extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        String item = data[i];
+        BaseAdapterComponentCellData item = data[i];
         ViewHolder viewHolder = null;
         if (view == null) {
             view = LayoutInflater.from(getContext()).inflate(R.layout.listinfo_item_cell, null);
@@ -71,7 +71,7 @@ public class BaseAdapterUiExperience extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         // Api 名称
-        viewHolder.tv_listinfo_key.setText(item);
+        viewHolder.tv_listinfo_key.setText(item.getTitle());
         viewHolder.tvi_listinfo_icon.setTextSize(12);
         return view;
     }

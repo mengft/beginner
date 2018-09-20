@@ -44,7 +44,7 @@
 
     </RadioGroup>
 
-    <com.mengft.mengft_ui.Compenent.ViewPagerNoScroll
+    <com.mengft.mengft_ui.Component.ViewPagerNoScroll
         android:id="@+id/vpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

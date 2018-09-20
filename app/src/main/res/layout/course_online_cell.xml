@@ -28,7 +28,7 @@
             android:textColor="@color/colorTitle"
             android:maxLines="2"/>
 
-        <com.mengft.mengft_ui.Compenent.TextViewNumber
+        <com.mengft.mengft_ui.Component.TextViewNumber
             android:id="@+id/tv_online_course_hot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

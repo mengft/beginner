@@ -10,7 +10,7 @@
         android:orientation="vertical">
 
         <!--Header-->
-        <com.mengft.mengft_ui.Compenent.TopBar
+        <com.mengft.mengft_ui.Component.TopBar
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:title="@string/tab_menu_personalCenter" />
@@ -57,7 +57,7 @@
 
             </LinearLayout>
 
-            <com.mengft.mengft_ui.Compenent.TextViewIcon
+            <com.mengft.mengft_ui.Component.TextViewIcon
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"

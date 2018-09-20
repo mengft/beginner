@@ -9,9 +9,11 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.mengft.mengft_ui.Adapter.BaseAdapterComponentCellData;
 import com.mengft.mengft_ui.Adapter.BaseAdapterUiExperience;
-import com.mengft.mengft_ui.Compenent.AlertDialogMessage;
-import com.mengft.mengft_ui.Compenent.TopBar;
+import com.mengft.mengft_ui.Component.AlertDialogMessage;
+import com.mengft.mengft_ui.Component.TopBar;
 import com.mengft.mengft_ui.R;
 
 import static com.mengft.mengft_ui.R.id.lv_uiexperience;
@@ -23,17 +25,17 @@ import static com.mengft.mengft_ui.R.id.lv_uiexperience;
 @Route(path = "/home/UiExperienceActivity")
 public class UiExperienceActivity extends Activity implements AdapterView.OnItemClickListener, AlertDialogMessage.AlertDialogMessageListener {
 
-    private static String TAG = "UiExperienceActivity";
+    private static String TAG = UiExperienceActivity.class.getSimpleName();
     private AlertDialogMessage alertDialogMessage;
     private ListView listView;
-    private String[] ui_arr;
+    private BaseAdapterComponentCellData[] ui_arr;
 
     private TopBar topBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.ui_experience);
+        setContentView(R.layout.home_ui_experience);
 
         bindTopBar();
         bindListView();
@@ -62,7 +64,14 @@ public class UiExperienceActivity extends Activity implements AdapterView.OnItem
      * 绑定ListView
      */
     private void bindListView() {
-        ui_arr = new String[]{"AlertDialigMessage", "AlertDaaligMessage", "TextViewNumber", "TextViewIcon"};
+
+        ui_arr = new BaseAdapterComponentCellData[] {
+                new BaseAdapterComponentCellData("AlertDialigMessage", "AlertDialigMessage", "自定义弹框"),
+                new BaseAdapterComponentCellData("TextViewNumber", "TextViewNumber", "数字"),
+                new BaseAdapterComponentCellData("TextViewIcon", "TextViewIcon", "字体"),
+                new BaseAdapterComponentCellData("CameraCustomize", "CameraCustomize", "相机"),
+        };
+
         listView = findViewById(lv_uiexperience);
         listView.setAdapter(new BaseAdapterUiExperience(this, ui_arr));
         listView.setOnItemClickListener(this);
@@ -70,15 +79,16 @@ public class UiExperienceActivity extends Activity implements AdapterView.OnItem
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        String item = ui_arr[i];
-        switch (item) {
+        BaseAdapterComponentCellData item = ui_arr[i];
+        switch (item.getKey()) {
             case "AlertDialigMessage":
                 //  alertDialogMessage = new AlertDialogMessage(this, "这是Component 组件", "名字为：AlertDialogMessage");
                 alertDialogMessage = new AlertDialogMessage(this, "这是Component 组件", "名字为：AlertDialogMessage", "走了哦", "留下吧");
                 alertDialogMessage.setAlertListener(this);
                 alertDialogMessage.show();
                 break;
-            case "AlertDaaligMessage":
+            case "CameraCustomize":
+                ARouter.getInstance().build("/home/CameraCustomize").navigation();
                 break;
             default:
                 break;

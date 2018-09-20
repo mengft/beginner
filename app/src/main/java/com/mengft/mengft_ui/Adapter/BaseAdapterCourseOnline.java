@@ -9,7 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.mengft.mengft_ui.Compenent.TextViewNumber;
+import com.mengft.mengft_ui.Component.TextViewNumber;
 import com.mengft.mengft_ui.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;

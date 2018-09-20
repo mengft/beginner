@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.mengft.mengft_ui.Compenent.SubmitButton;
+import com.mengft.mengft_ui.Component.SubmitButton;
 import com.mengft.mengft_ui.R;
 
 /**

@@ -17,7 +17,7 @@
         android:textSize="@dimen/font15"
         android:textColor="@color/colorLightTitle"/>
 
-    <com.mengft.mengft_ui.Compenent.TextViewIcon
+    <com.mengft.mengft_ui.Component.TextViewIcon
         android:id="@+id/tvi_listinfo_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,4 +1,4 @@
-package com.mengft.mengft_ui.Compenent;
+package com.mengft.mengft_ui.Component;
 
 import android.content.Context;
 import android.os.Build;

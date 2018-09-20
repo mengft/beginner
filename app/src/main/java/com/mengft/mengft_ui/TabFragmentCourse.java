@@ -13,7 +13,7 @@ import com.mengft.mengft_ui.Adapter.BaseAdapterCourseOffline;
 import com.mengft.mengft_ui.Adapter.BaseAdapterCourseOfflineCellData;
 import com.mengft.mengft_ui.Adapter.BaseAdapterCourseOnline;
 import com.mengft.mengft_ui.Adapter.BaseAdapterCourseOnlineCellData;
-import com.mengft.mengft_ui.Compenent.ListViewForScrollView;
+import com.mengft.mengft_ui.Component.ListViewForScrollView;
 
 import java.util.Date;
 

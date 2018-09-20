@@ -13,7 +13,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.mengft.mengft_ui.Compenent.TopBar
+            <com.mengft.mengft_ui.Component.TopBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:title="@string/tab_menu_course" />
@@ -44,7 +44,7 @@
                 </RelativeLayout>
 
                 <!--Article List-->
-                <com.mengft.mengft_ui.Compenent.ListViewForScrollView
+                <com.mengft.mengft_ui.Component.ListViewForScrollView
                     android:id="@+id/lv_course_online"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -85,7 +85,7 @@
                 </RelativeLayout>
 
                 <!--Article List-->
-                <com.mengft.mengft_ui.Compenent.ListViewForScrollView
+                <com.mengft.mengft_ui.Component.ListViewForScrollView
                     android:id="@+id/lv_course_offline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
