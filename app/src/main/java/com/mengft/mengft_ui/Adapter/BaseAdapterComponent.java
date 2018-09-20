@@ -55,21 +55,6 @@ public class BaseAdapterComponent extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-
-        if (view == null) {
-<<<<<<< HEAD
-//            view = LayoutInflater.from(getContext()).inflate(R.layout)
-//            TextView textView = view.findViewById()
-=======
-            view = LayoutInflater.from(getContext()).inflate(R.la)
-            TextView textView = view.findViewById()
->>>>>>> e3ee6467de9b5478f9ae6d952b382539042fc861
-        }
-
         return view;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> e3ee6467de9b5478f9ae6d952b382539042fc861
 }

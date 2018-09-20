@@ -18,12 +18,8 @@ import com.easefun.polyvsdk.PolyvDownloaderManager;
 import com.easefun.polyvsdk.PolyvSDKClient;
 import com.mengft.mengft_ui.Component.ViewPagerNoScroll;
 import com.mengft.mengft_ui.Utils.ImageLoaderUtils;
-import com.mengft.mengft_ui.Utils.ObjectConvert;
-import com.xiaomi.mipush.sdk.MiPushClient;
 
 import java.io.File;
-import java.util.Timer;
-import java.util.TimerTask;
 
 @Route(path = "/main/MainActivity")
 public class MainActivity extends AppCompatActivity implements RadioGroup.OnCheckedChangeListener, ViewPager.OnPageChangeListener {
@@ -56,7 +52,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         ARouter.openDebug();                                        // 开启调试模式
         ARouter.init(getApplication());                             // 推荐在Application中初始化
         initPolyvSDKClient();                                       // 初始化保利卫视
-        initMiPush();                                               // 初始化小米推送
         new ImageLoaderUtils(this).initImageLoader();               // 初始化ImageLoading
 
         setContentView(R.layout.activity_main);
@@ -163,14 +158,11 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     @Override
     protected void onResume() {
         super.onResume();
-        // 检查是否由Push唤醒应用 (如有则取出其中参数作出响应)
-        checkMixPushEvent();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
         // 注销保利卫视
     }
 
@@ -233,59 +225,4 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         client.initCrashReport(this);
     }
 
-    /**
-     * 初始化小米Push
-     */
-    private void initMiPush() {
-        if (shouldInit()) {
-            MiPushClient.registerPush(this, MiPushAppID, MiPushAppKey);       // 初始化push推送服务
-        }
-    }
-
-    /**
-     * 小米Push是否满足初始化条件
-     *
-     * @return
-     */
-    private boolean shouldInit() {
-//        ActivityManager am = ((ActivityManager) getSystemService(Context.ACTIVITY_SERVICE));
-//        List<RunningAppProcessInfo> processInfos = am.getRunningAppProcesses();
-//        String mainProcessName = getPackageName();
-//        int myPid = Process.myPid();
-//        for (RunningAppProcessInfo info : processInfos) {
-//            if (info.pid == myPid && mainProcessName.equals(info.processName)) {
-//                return true;
-//            }
-//        }
-//        return false;
-        return true;
-    }
-
-    /**
-     * MixPush推送在消息栏被点击触发
-     * 小米设备在杀死和运行状态下都会走这里
-     * 华为在杀死情况下走这里，在开启情况下不走这里
-     */
-    public void checkMixPushEvent() {
-        Log.e(TAG, "检查是否接收到通知栏点击事件");
-        Intent intent = getIntent();
-        bundle = intent.getExtras();
-        if (bundle != null && bundle.containsKey("action")) {
-            Log.e(TAG, "MixPush接收到推送消息栏点击事件");
-            final String content = new ObjectConvert().convertBundleToJson(bundle);
-            // 重新初始化 Intent, 避免重复触发
-            intent = new Intent();
-            bundle = new Bundle();
-            // JavaScript初始化需要耗费一定时间
-            TimerTask task = new TimerTask() {
-                @Override
-                public void run() {
-                    Log.e(TAG, "通知栏消息获取消息 " + content);
-                }
-            };
-
-            Timer timer = new Timer();
-            timer.schedule(task, 1000);
-        }
-    }
 }
