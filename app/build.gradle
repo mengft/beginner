@@ -60,6 +60,4 @@ dependencies {
     compile 'com.easefun.polyv:polyvSub:2.2.1'
     //弹幕、截图功能中使用
     testCompile 'junit:junit:4.12'
-    // 小米Push Module
-    compile project(':com.mengft.mipush')
 }
