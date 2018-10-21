@@ -18,6 +18,7 @@ import com.easefun.polyvsdk.PolyvDownloaderManager;
 import com.easefun.polyvsdk.PolyvSDKClient;
 import com.mengft.mengft_ui.Component.ViewPagerNoScroll;
 import com.mengft.mengft_ui.Utils.ImageLoaderUtils;
+import com.mengft.mengft_ui.Utils.SQLiteUtils;
 
 import java.io.File;
 
@@ -56,7 +57,15 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
 
         setContentView(R.layout.activity_main);
         tabFragmentPagerAdapter = new TabFragmentPagerAdapter(getSupportFragmentManager());
+        init();
         bindView();
+    }
+
+    /**
+     * 初始化
+     */
+    private void init() {
+        new SQLiteUtils(this).createDatabase();
     }
 
     private void bindView() {

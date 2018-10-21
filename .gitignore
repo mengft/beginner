@@ -3,8 +3,5 @@
 .DS_Store
 .project
 .settings/org.eclipse.buildship.core.prefs
-app/.DS_Store
 build/
-gradle/
-app/.DS_Store
 app/.DS_Store

@@ -17,6 +17,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -31,14 +34,13 @@ public class BaseAdapterCourseOffline extends BaseAdapter {
 
     private Context context;
 
-    private BaseAdapterCourseOfflineCellData[] data;
+    private JSONArray data;
+    private JSONObject item;
 
-    public BaseAdapterCourseOffline(Context context, BaseAdapterCourseOfflineCellData[] data) {
+    public BaseAdapterCourseOffline(Context context, JSONArray data) {
         this.context = context;
         this.data = data;
     }
-
-    private BaseAdapterCourseOfflineCellData item;
 
     public Context getContext() {
         return context;
@@ -50,12 +52,12 @@ public class BaseAdapterCourseOffline extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return data.length;
+        return data.length();
     }
 
     @Override
-    public Object getItem(int i) {
-        return data[i];
+    public JSONObject getItem(int i) {
+        return data.optJSONObject(i);
     }
 
     @Override
@@ -83,18 +85,18 @@ public class BaseAdapterCourseOffline extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
 
-        item = data[i];
+        item = getItem(i);
 
         // 标题
-        viewHolder.tv_offline_course_title.setText(item.getTitle());
+        viewHolder.tv_offline_course_title.setText(item.optString("title"));
         // 举办地点
-        viewHolder.tv_offline_course_address.setText(item.getAddress());
+        viewHolder.tv_offline_course_address.setText(item.optString("location"));
         // 开始时间
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月DD日");
-        viewHolder.tv_offline_course_starttime.setText(simpleDateFormat.format(new Date(item.getStartTime())));
+        viewHolder.tv_offline_course_starttime.setText(simpleDateFormat.format(new Date(item.optLong("startTime"))));
         // 报名人数
         String enrollNumber = getContext().getResources().getString(R.string.enrollNumber);
-        viewHolder.tv_offline_course_enrollnumber.setText(String.format(enrollNumber, item.getEnrollNumber()));
+        viewHolder.tv_offline_course_enrollnumber.setText(String.format(enrollNumber, item.optString("enrollNum")));
         // 课程封面
         viewHolder.iv_course_offline_thumbnail.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
@@ -109,8 +111,7 @@ public class BaseAdapterCourseOffline extends BaseAdapter {
                 .imageScaleType(ImageScaleType.IN_SAMPLE_INT)                   // 图片布局方式
                 .build();                                                       // 构建完成
 
-        ImageLoader.getInstance().displayImage(item.getThumbnail(), viewHolder.iv_course_offline_thumbnail, options);
-
+        ImageLoader.getInstance().displayImage(item.optString("thumbnail"), viewHolder.iv_course_offline_thumbnail, options);
 
         return view;
     }

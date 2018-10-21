@@ -16,6 +16,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import static com.mengft.mengft_ui.R.id.tv_online_course_title;
 
 /**
@@ -26,14 +29,14 @@ public class BaseAdapterCourseOnline extends BaseAdapter {
 
     private Context context;
 
-    private BaseAdapterCourseOnlineCellData[] data;
+    private JSONArray data;
+    private JSONObject item;
 
-    public BaseAdapterCourseOnline(Context context, BaseAdapterCourseOnlineCellData[] data) {
+    public BaseAdapterCourseOnline(Context context, JSONArray data) {
         this.context = context;
         this.data = data;
     }
 
-    private BaseAdapterCourseOnlineCellData item;
 
     public Context getContext() {
         return context;
@@ -45,12 +48,12 @@ public class BaseAdapterCourseOnline extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return data.length;
+        return data.length();
     }
 
     @Override
-    public Object getItem(int i) {
-        return data[i];
+    public JSONObject getItem(int i) {
+        return data.optJSONObject(i);
     }
 
     @Override
@@ -75,12 +78,12 @@ public class BaseAdapterCourseOnline extends BaseAdapter {
         }
 
         // 数据源
-        item = (BaseAdapterCourseOnlineCellData) getItem(i);
+        item = getItem(i);
         // 标题
-        viewHolder.tv_online_course_title.setText(item.getTitle());
+        viewHolder.tv_online_course_title.setText(item.optString("title"));
         // 报名人数
         String enrollNumber = getContext().getResources().getString(R.string.enrollNumber);
-        viewHolder.tv_online_course_hot.setText(String.format(enrollNumber, item.getEnrollNumber()));
+        viewHolder.tv_online_course_hot.setText(String.format(enrollNumber, item.optString("enrollNum")));
         // 封面
         viewHolder.iv_course_online_thumbnail.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
@@ -95,7 +98,7 @@ public class BaseAdapterCourseOnline extends BaseAdapter {
                 .imageScaleType(ImageScaleType.IN_SAMPLE_INT)                   // 图片布局方式
                 .build();                                                       // 构建完成
 
-        ImageLoader.getInstance().displayImage(item.getThumbnail(), viewHolder.iv_course_online_thumbnail, options);
+        ImageLoader.getInstance().displayImage(item.optString("thumbnail"), viewHolder.iv_course_online_thumbnail, options);
 
         return view;
     }
@@ -105,5 +108,4 @@ public class BaseAdapterCourseOnline extends BaseAdapter {
         TextViewNumber tv_online_course_hot;
         ImageView iv_course_online_thumbnail;
     }
-
 }

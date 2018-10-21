@@ -1,6 +1,7 @@
 package com.mengft.mengft_ui.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.mengft.mengft_ui.Component.TextViewNumber;
 import com.mengft.mengft_ui.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * Created by mengft on 2018/5/22.
@@ -20,10 +26,10 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 public class BaseAdapterArticle extends BaseAdapter {
 
     private Context context;
-    private BaseAdapterArticleCellDate[] data;
-    private BaseAdapterArticleCellDate item;
+    private JSONArray data;
+    private JSONObject item;
 
-    public BaseAdapterArticle(Context context, BaseAdapterArticleCellDate[] data) {
+    public BaseAdapterArticle(Context context, JSONArray data) {
         this.context = context;
         this.data = data;
     }
@@ -36,22 +42,22 @@ public class BaseAdapterArticle extends BaseAdapter {
         this.context = context;
     }
 
-    public BaseAdapterArticleCellDate[] getData() {
+    public JSONArray getData() {
         return data;
     }
 
-    public void setData(BaseAdapterArticleCellDate[] data) {
+    public void setData(JSONArray data) {
         this.data = data;
     }
 
     @Override
     public int getCount() {
-        return data.length;
+        return data.length();
     }
 
     @Override
-    public Object getItem(int i) {
-        return data[i];
+    public JSONObject getItem(int i) {
+        return data.optJSONObject(i);
     }
 
     @Override
@@ -77,19 +83,18 @@ public class BaseAdapterArticle extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         // 数据源
-        item = (BaseAdapterArticleCellDate) getItem(i);
+        item = getItem(i);
         // 标题
-        viewHolder.tv_article_title.setText(item.getTitle());
+        viewHolder.tv_article_title.setText(item.optString("head").toString());
         // 人气
         String hot = context.getResources().getString(R.string.hot);
-        viewHolder.tv_article_hot.setText(String.format(hot, item.getEnrollNumber()));
+        viewHolder.tv_article_hot.setText(String.format(hot, "1000"));
         // 缩略图
         viewHolder.iv_article_thumbnail.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        ImageLoader.getInstance().displayImage(item.getThumbnail(), viewHolder.iv_article_thumbnail);
+        ImageLoader.getInstance().displayImage(item.optString("iconPath").toString(), viewHolder.iv_article_thumbnail);
 
         return view;
     }
-
 
     static class ViewHolder {
         TextView tv_article_title;

@@ -49,7 +49,12 @@ public class TabFragmentPersonalCenter extends Fragment implements View.OnClickL
         relativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ARouter.getInstance().build("/personal/UserInfoActivity").navigation();
+                String access_token = getContext().getSharedPreferences("user", 0).getString("access_token", "");
+                if (access_token != "") {
+                    ARouter.getInstance().build("/personal/UserInfoActivity").navigation();
+                } else {
+                    ARouter.getInstance().build("/login/LoginActivity").navigation();
+                }
             }
         });
     }

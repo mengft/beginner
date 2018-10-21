@@ -54,4 +54,32 @@
 
     </RelativeLayout>
 
+    <com.google.android.flexbox.FlexboxLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:flexWrap="wrap"
+        app:flexDirection="row"
+        app:justifyContent="space_between"
+        app:alignItems="stretch"
+        app:alignContent="stretch" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一行第一列"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一行第二列"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一行第三列"/>
+
+    </com.google.android.flexbox.FlexboxLayout>
+
 </LinearLayout>

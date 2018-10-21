@@ -1,6 +1,7 @@
 package com.mengft.mengft_ui.PersonalCenter;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.ExpandableListView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.google.android.flexbox.FlexboxLayout;
 import com.mengft.mengft_ui.Adapter.BaseExpandableListAdapterListInfo;
 import com.mengft.mengft_ui.Adapter.BaseExpandableListAdapterListInfoGroupCellData;
 import com.mengft.mengft_ui.Adapter.BaseExpandableListAdapterListInfoItemCellData;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
  */
 
 @Route(path = "/personal/UserInfoActivity")
-public class UserInfoActivity extends Activity {
+public class UserInfoActivity extends Activity implements View.OnClickListener {
 
     private ExpandableListView expandableListView;
     private ArrayList<BaseExpandableListAdapterListInfoGroupCellData> groupData = null;
@@ -29,14 +31,24 @@ public class UserInfoActivity extends Activity {
     private ArrayList<ArrayList<BaseExpandableListAdapterListInfoItemCellData>> itemData = null;
 
     private TopBar topBar;
+    private FlexboxLayout fl_logout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.personal_userinfo);
 
+        bindView();
         bindTopBar();
         bindExpandableListView();
+    }
+
+    /**
+     * 绑定UI组件
+     */
+    private void bindView () {
+        fl_logout = findViewById(R.id.fl_logout);
+        fl_logout.setOnClickListener(this);
     }
 
     /**
@@ -110,4 +122,31 @@ public class UserInfoActivity extends Activity {
         });
     }
 
+    /**
+     * 退出登录
+     */
+    private void logout () {
+        // 初始化权限信息
+        Boolean done = getSharedPreferences("user", 0)
+                .edit().
+                putString("access_token", null)
+                .commit();
+
+        if (done) finish();
+    }
+
+    /**
+     * 点击事件
+     * @param view
+     */
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.fl_logout:
+                logout();
+                break;
+                default:
+                    break;
+        }
+    }
 }
